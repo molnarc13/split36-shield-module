@@ -1,0 +1,16 @@
+if SHIELD_SPLIT36_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Split36"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_SPLIT36_LEFT || SHIELD_SPLIT36_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif

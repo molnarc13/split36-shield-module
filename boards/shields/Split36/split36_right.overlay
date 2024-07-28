@@ -1,0 +1,14 @@
+#include "split36.dtsi"
+
+&default_transform {
+    col-offset = <5>;
+};
+
+&kscan0 {
+    col-gpios
+        = <&pro_micro col9 GPIO_ACTIVE_HIGH>
+        , <&pro_micro col8 GPIO_ACTIVE_HIGH>
+        , <&pro_micro col7 GPIO_ACTIVE_HIGH>
+        , <&pro_micro col6 GPIO_ACTIVE_HIGH>
+        , <&pro_micro col5 GPIO_ACTIVE_HIGH>
+};
