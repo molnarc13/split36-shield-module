@@ -15,7 +15,7 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <125>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -75,16 +75,16 @@
         compatible = "zmk,keymap";
 
         default_layer {
-// --------------------------------------------------------------------------------------
-// |   Q   |   W   |   F   |   P   |  B  |        |  J  |   L   |   U   |   Y   |   ;   |
-// | A/SHF | R/CTR | S/OPT | T/CMD |  G  |        |  M  | N/CMD | E/OPT | I/CTR | O/SHF |
-// |   Z   |   X   |   C   |   D   |  V  |        |  K  |   H   |   ,   |   .   |   /   |
-//                 |  TAB  | MLWR  | BSP |        | SPC |  RSE  |  RET  |
+// ----------------------------------------------------------------------
+// |   Q   | W |  F  |  P   |  B  |        |  J  |  L  |  U  | Y |  ;   |
+// |   A   | R |  S  |  T   |  G  |        |  M  |  N  |  E  | I |  O   |
+// | Z/SHF | X |  C  |  D   |  V  |        |  K  |  H  |  ,  | . | /SHF |
+//             | TAB | MLWR | BSP |        | SPC | RSE | RET |
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B                                &kp J &kp L &kp U &kp Y &kp SEMI
-                &hm LSHFT A &hm LCTRL R &hm LALT S &hm LCMD T &kp G          &kp M &hm RCMD N &hm RALT E &hm RCTRL I &hm RSHFT O
-                &kp Z &kp X &kp C &kp D &kp V                                &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                &kp TAB &mo MLWR &kp BSPC                                    &kp SPACE &mo RSE &kp RET
+                &kp Q &kp W &kp F &kp P &kp B           &kp J &kp L &kp U &kp Y &kp SEMI
+                &kp A &kp R &kp S &kp T &kp G           &kp M &kp N &kp E &kp I &hkp O
+                &hm LSHFT Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &hm RSHFT FSLH
+                &kp TAB &mo MLWR &kp BSPC               &kp SPACE &mo RSE &kp RET
             >;
         };
         mac_lower_layer {
@@ -101,29 +101,29 @@
             >;
         };
         raise_layer {
-// ------------------------------------------------------
-// | ! | @ |  #  |  $  | % |        | ^ | & | * | ( | ) |
-// |   |   |     |     | = |        | - |   |   |   |   |
-// | ` |   |     |  [  |   |        |   | ] |   | \ | ' |
-//         | ESC | TOG |   |        |   |   |   |
+// --------------------------------------------------------
+// | ! |  @  |  #  |  $  | % |        | ^ | & | * | ( | ) |
+// |   | GUI | ALT | CTR | = |        | - |   |   |   |   |
+// | ` |     |     |  [  |   |        |   | ] |   | \ | ' |
+//           | ESC | TOG |   |        |   |   |   |
             bindings = <
                 &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT          &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR
-                &trans &trans &trans &trans &kp EQUAL                &kp MINUS &trans &trans &trans &trans
+                &trans &sk LGUI &sk LALT &sk LCTRL &kp EQUAL         &kp MINUS &trans &trans &trans &trans
                 &kp GRAVE &trans &trans &kp LBKT &trans              &trans &kp RBKT &trans &kp BSLH &kp SQT
                 &kp ESC &mo TOG &trans                               &trans &trans &trans
             >;
         };
         windows_layer {
-// --------------------------------------------------------------------------------------
-// |   Q   |   W   |   F   |   P   |  B  |        |  J  |   L   |   U   |   Y   |   ;   |
-// | A/SHF | R/GUI | S/ALT | T/CTR |  G  |        |  M  | N/CTR | E/ALT | I/GUI | O/SHF |
-// |   Z   |   X   |   C   |   D   |  V  |        |  K  |   H   |   ,   |   .   |   /   |
-//                 |  TAB  | WLWR  | BSP |        | SPC |  RSE  |  RET  |
+// ----------------------------------------------------------------------
+// |   Q   | W |  F  |  P   |  B  |        |  J  |  L  |  U  | Y |  ;   |
+// |   A   | R |  S  |  T   |  G  |        |  M  |  N  |  E  | I |  O   |
+// | Z/SHF | X |  C  |  D   |  V  |        |  K  |  H  |  ,  | . | /SHF |
+//             | TAB | WLWR | BSP |        | SPC | RSE | RET |
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B                                &kp J &kp L &kp U &kp Y &kp SEMI
-                &hm LSHFT A &hm LWIN R &hm LALT S &hm LCTRL T &kp G          &kp M &hm RCTRL N &hm RALT E &hm RWIN I &hm RSHFT O
-                &kp Z &kp X &kp C &kp D &kp V                                &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                &kp TAB &mft WIN WLWR &kp BSPC                               &kp SPACE &mft WIN RSE &kp RET
+                &kp Q &kp W &kp F &kp P &kp B           &kp J &kp L &kp U &kp Y &kp SEMI
+                &kp A &kp R &kp S &kp T &kp G           &kp M &kp N &kp E &kp I &hkp O
+                &hm LSHFT Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &hm RSHFT FSLH
+                &kp TAB &mft WIN WLWR &kp BSPC          &kp SPACE &mft WIN RSE &kp RET
             >;
         };
         windows_lower_layer {
@@ -140,15 +140,15 @@
             >;
         };
         game_layer {
-// ------------------------------------------------------------------------------
-// |   Q   | W |  F  |  P  |  B  |        |  J  |   L   |   U   |   Y   |   ;   |
-// | A/SHF | R |  S  |  T  |  G  |        |  M  | N/CTR | E/ALT | I/GUI | O/SHF |
-// |   Z   | X |  C  |  D  |  V  |        |  K  |   H   |   ,   |   .   |   /   |
-//             | CTR | ALT | BSP |        | SPC |  RSE  |  RET  |
+// ---------------------------------------------------------------------
+// |   Q   | W |  F  |  P  |  B  |        |  J  |  L  |  U  | Y |  ;   |
+// |   A   | R |  S  |  T  |  G  |        |  M  |  N  |  E  | I |  O   |
+// | Z/SHF | X |  C  |  D  |  V  |        |  K  |  H  |  ,  | . | /SHF |
+//             | CTR | ALT | BSP |        | SPC | RSE | RET |
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B                &kp J &kp L &kp U &kp Y &kp SEMI
-                &hm LSHFT A &kp R &kp S &kp T &kp G          &kp M &hm RCTRL N &hm RALT E &hm RWIN I &hm RSHFT O
-                &kp Z &kp X &kp C &kp D &kp V                &kp K &kp H &kp COMMA &kp DOT &kp FSLH
+                &kp A &kp R &kp S &kp T &kp G                &kp M &kp N &kp E &kp I &kp O
+                &hm LSHFT Z &kp X &kp C &kp D &kp V          &kp K &kp H &kp COMMA &kp DOT &hm RSHFT FSLH
                 &kp LCTRL &kp LALT &kp BSPC                  &kp SPACE &mft GAM RSE &kp RET
             >;
         };
