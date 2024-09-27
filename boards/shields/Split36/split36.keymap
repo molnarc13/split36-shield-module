@@ -104,16 +104,16 @@
             >;
         };
         game_layer {
-// ---------------------------------------------------------------------
-// |   Q   | W |  F  |  P  |  B  |        |  J  |  L  |  U  | Y |  ;   |
-// |   A   | R |  S  |  T  |  G  |        |  M  |  N  |  E  | I |  O   |
-// | Z/SHF | X |  C  |  D  |  V  |        |  K  |  H  |  ,  | . | /SHF |
-//             | CTR | ALT | BSP |        | SPC | GAM | RET |
+// ----------------------------------------------------------------------
+// |   Q   | W |  F  |  P  |  B  |        |    J    |  L  |  U  | Y | ; |
+// |   A   | R |  S  |  T  |  G  |        |    M    |  N  |  E  | I | O |
+// | Z/SHF | X |  C  |  D  |  V  |        |    K    |  H  |  ,  | . | / |
+//             | CTR | ALT | BSP |        | SPC/SHF | GAM | RET |
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B                &kp J &kp L &kp U &kp Y &kp SEMI
                 &kp A &kp R &kp S &kp T &kp G                &kp M &kp N &kp E &kp I &kp O
-                &hm LSHFT Z &kp X &kp C &kp D &kp V          &kp K &kp H &kp COMMA &kp DOT &hm RSHFT FSLH
-                &kp LCTRL &kp LALT &kp BSPC                  &kp SPACE &tog GAM &kp RET
+                &hm LSHFT Z &kp X &kp C &kp D &kp V          &kp K &kp H &kp COMMA &kp DOT &kp FSLH
+                &kp LCTRL &kp LALT &kp BSPC                  &hm RSHFT SPACE &tog GAM &kp RET
             >;
         };
         toggle_layer {
