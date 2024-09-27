@@ -8,6 +8,10 @@
 #define GAM 3
 #define TOG 4
 
+&lt {
+    tapping-term-ms = <175>;
+};
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -17,14 +21,6 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-        };
-        hmo: homerow_mod_momentary {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
         };
         hmos: homerow_mod_one_shot {
             compatible = "zmk,behavior-hold-tap";
@@ -82,7 +78,7 @@
                 &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U &kp Y &kp SEMI
                 &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E &kp I &kp O
                 &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                &kp TAB &kp LRHFT &hmo LWR BSPC   &hmo RSE SPACE &kp RSHFT &kp RET
+                &kp TAB &kp LRHFT &lt LWR BSPC    &lt RSE SPACE &kp RSHFT &kp RET
             >;
         };
         lower_layer {
@@ -95,7 +91,7 @@
                 &wwlft &kp HOME &kp UP &kp END &wwrht            &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &trans
                 &mwlft &kp LEFT &kp DOWN &kp RIGHT &mwrht        &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &trans
                 &trans &trans &trans &trans &trans               &kp C_MUTE &kp N1 &kp N2 &kp N3 &trans
-                &trans &trans &trans                             &hmo TOG N0 &trans &trans
+                &trans &trans &trans                             &lt TOG N0 &trans &trans
             >;
         };
         raise_layer {
