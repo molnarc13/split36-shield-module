@@ -6,7 +6,7 @@ manifest:
       url-base: https://github.com/bigtree908
   projects:
     - name: zmk
-      remote: petejohanson
+      remote: zmkfirmware
       revision: feat/pointers-move-scroll
       import: app/west.yml
     - name: pmw3360
