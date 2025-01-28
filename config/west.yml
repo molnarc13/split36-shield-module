@@ -1,13 +1,16 @@
 manifest:
   remotes:
-    - name: slicemk
-      url-base: https://github.com/slicemk
-    - name: luberry
-      url-base: https://github.com/luberry
+    - name: zmkfirmware
+      url-base: https://github.com/petejohanson
+    - name: pmwdriver
+      url-base: https://github.com/bigtree908
   projects:
     - name: zmk
-      remote: luberry
-      revision: pmw3389
+      remote: zmkfirmware
+      revision: feat/pointers-move-scroll
       import: app/west.yml
+    - name: pmw3360
+      remote: pmwdriver
+      revision: pmw3360
   self:
     path: config
