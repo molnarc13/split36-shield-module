@@ -3,7 +3,7 @@ if SHIELD_SPLIT36_LEFT
 config ZMK_KEYBOARD_NAME
     default "Split36"
 
-config ZMK_SPLIT_CENTRAL_ROLE
+config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
