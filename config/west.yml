@@ -1,11 +1,13 @@
 manifest:
   remotes:
-    - name: zmk
-      url-base: https://github.com/drorchen
+    - name: slicemk
+      url-base: https://github.com/slicemk
+    - name: luberry
+      url-base: https://github.com/luberry
   projects:
     - name: zmk
-      remote: zmk
-      revision: trackball-support
+      remote: luberry
+      revision: pmw3389
       import: app/west.yml
   self:
     path: config
