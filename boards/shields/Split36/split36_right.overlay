@@ -41,13 +41,14 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&pro_micro 18 GPIO_ACTIVE_LOW>;
 
-    trackball: pmw3360@0 {
+    trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3360";
         reg = <0>;
-        label = "TRACKBALL";
         irq-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         spi-max-frequency = <2000000>;
+        scroll-layers = <6>;
+        automouse-layer = <5>;
     };
 };
 
