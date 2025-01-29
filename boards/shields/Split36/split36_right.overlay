@@ -46,7 +46,7 @@
         compatible = "pixart,pmw3360";
         reg = <0>;
         label = "TRACKBALL";
-        irq-gpios = <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        irq-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         spi-max-frequency = <2000000>;
     };
 };
