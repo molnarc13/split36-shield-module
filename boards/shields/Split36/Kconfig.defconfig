@@ -16,4 +16,4 @@ config ZMK_SPLIT
 endif
 
 config SPI
-    default y
+	default y
