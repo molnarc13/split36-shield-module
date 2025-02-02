@@ -1,5 +1,5 @@
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "split36.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <5>;
@@ -42,7 +42,7 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&pro_micro 18 GPIO_ACTIVE_LOW>;
 
-    trackball: trackball@0 {
+    trackball_peripheral: trackball_peripheral@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
@@ -55,13 +55,6 @@
     };
 };
 
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors =
-            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
-            <&zip_temp_layer 5 250>;
-    };
+&trackball_peripheral_split {
+    device = <&trackball_peripheral>;
 };
