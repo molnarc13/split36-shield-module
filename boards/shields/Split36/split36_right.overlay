@@ -55,5 +55,5 @@
 };
 
 &trackball_peripheral_split {
-    device = <&trackball>
+    device = <&trackball>;
 };
