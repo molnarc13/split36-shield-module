@@ -13,16 +13,7 @@ if SHIELD_SPLIT36_LEFT || SHIELD_SPLIT36_RIGHT
 config ZMK_SPLIT
     default y
 
-config ZMK_POINTING
-    default y
-
-config ZMK_POINTING_SMOOTH_SCROLLING
-    default y
+endif
 
 config SPI
     default y
-
-config PMW3610
-    default y
-
-endif
