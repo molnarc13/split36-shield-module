@@ -13,13 +13,6 @@
 #define MOUSE 5
 #define SCROLL 6
 
-&trackball_listener {
-    scroller {
-        layers = <SCROLL>;
-        input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_to_scroll_mapper>;
-    };
-};
-
 &lt {
     tapping-term-ms = <175>;
 };
