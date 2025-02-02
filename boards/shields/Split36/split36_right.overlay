@@ -1,3 +1,4 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "split36.dtsi"
 
 &default_transform {
@@ -18,7 +19,7 @@
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 10)>,
+                <NRF_PSEL(SPIM_MOSI, 1, 11)>,
                 <NRF_PSEL(SPIM_MISO, 1, 11)>;
             low-power-enable;
         };
@@ -26,7 +27,7 @@
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 10)>,
+                <NRF_PSEL(SPIM_MOSI, 1, 11)>,
                 <NRF_PSEL(SPIM_MISO, 1, 11)>;
             low-power-enable;
         };
@@ -43,12 +44,12 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3360";
+        compatible = "pixart,pmw3610";
         reg = <0>;
-        irq-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        irq-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         spi-max-frequency = <2000000>;
-        scroll-layers = <6>;
         automouse-layer = <5>;
+        scroll-layers = <6>;
     };
 };
 
