@@ -1,5 +1,4 @@
 #include "split36.dtsi"
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &kscan0 {
     col-gpios
