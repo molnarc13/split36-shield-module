@@ -146,7 +146,8 @@
 
 // trackball overrides
 &trackball_listener {
-    input-processors = <&zip_temp_layer 5 1000>;
+    input-processors = <&zip_temp_layer 5 1000>,
+        <&zip_xy_scaler 1 1>;
 
     scroller {
         layers = <6>;
