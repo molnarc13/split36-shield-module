@@ -78,12 +78,12 @@
 
         mouse {
             layers = <5>;
-            input = <&zip_temp_layer>;
+            input-processors = <&zip_temp_layer>;
         };
 
         scroller {
             layers = <6>;
-            input = <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
         };
     };
 };
