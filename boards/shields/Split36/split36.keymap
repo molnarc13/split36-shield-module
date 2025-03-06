@@ -1,9 +1,9 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <behaviors/mouse_keys.dtsi>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/mouse.h>
 
 #define LWR 1
 #define RSE 2
@@ -95,14 +95,14 @@
         };
         game_layer {
 // --------------------------------------------------------------------
-// |  Q  | W |  F  |  P  |  B  |        |  J  |  L  |  U  |  Y  |  ;  |
-// |  A  | R |  S  |  T  |  G  |        |  M  | MB1 | MB2 | MB3 | MB4 |
-// | SHF | X |  C  |  D  |  V  |        |  K  | LMB | RMB | SCR | MB5 |
+// |  Q  | W |  F  |  P  |  B  |        |  J  |  L  |  U  |  Y  | ; |
+// |  A  | R |  S  |  T  |  G  |        |  M  | MB4 | MB5 |  I  | O |
+// | SHF | X |  C  |  D  |  V  |        | MB3 | MB1 | MB2 | SCR | / |
 //           | CTR | ALT | BSP |        | GAM | SPC | RET |
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B       &kp J &kp L &kp U &kp Y &kp SEMI
-                &kp A &kp R &kp S &kp T &kp G       &kp M &kp N &kp E &kp I &kp O
-                &kp LSHFT &kp X &kp C &kp D &kp V   &kp K &kp H &kp COMMA &kp DOT &kp FSLH
+                &kp A &kp R &kp S &kp T &kp G       &kp M &mkp MB4 &mkp MB5 &kp I &kp O
+                &kp LSHFT &kp X &kp C &kp D &kp V   &mkp MB3 &mkp MB1 &mkp MB2 &kp DOT &kp FSLH
                 &kp LCTRL &kp BSPC &kp LALT         &tog GAM &kp SPACE &kp RET
             >;
         };
@@ -121,14 +121,14 @@
         };
         mouse_layer {
 // ------------------------------------------------------------
-// |   |   |   |   |   |        |   |      |      |     |     |
-// |   |   |   |   |   |        |   | MB1  | MB2  | MB3 | MB4 |
-// |   |   |   |   |   |        |   | LCLK | RCLK | SCR | MB5 |
-//         |   |   |   |        |   |      |      |
+// |   |   |   |   |   |        |     |     |     |     |   |
+// |   |   |   |   |   |        |     | MB4 | MB5 |     |   |
+// |   |   |   |   |   |        | MB3 | MB1 | MB2 | SCR |   |
+//         |   |   |   |        |     |     |     |
             bindings = <
                 &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans      &trans &mkp MB1 &mkp MB2 &mkp MB3 &mkp MB4
-                &trans &trans &trans &trans &trans      &trans &mkp LCLK &mkp RCLK &mo SCROLL &mkp MB5
+                &trans &trans &trans &trans &trans      &trans &mkp MB4 &mkp MB5 &trans &trans
+                &trans &trans &trans &trans &trans      &mkp MB3 &mkp MB1 &mkp MB2 &mo SCROLL &trans
                 &trans &trans &trans                    &trans &trans &trans
             >;
         };
