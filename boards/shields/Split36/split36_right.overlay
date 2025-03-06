@@ -59,9 +59,21 @@
     device = <&trackball>;
 };
 
+#include <input/processors.dtsi>
+
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+        mouse {
+            layers = <5>;
+            input <&zip_temp_layer>;
+        };
+
+        scroller {
+            layers = <6>;
+            input <&zip_xy_to_scroll_mapper>;
+        };
     };
 };
