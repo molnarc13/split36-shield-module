@@ -19,7 +19,7 @@
 / {
     tb0_mmv_ibl {
         compatible = "zmk,input-behavior-listener";
-        device = <&trackball>;
+        device = <&trackball_listener>;
         layers = <LWR MOUSE>;
         env-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
@@ -30,7 +30,7 @@
     };
     tb0_msl_ibl {
         compatible = "zmk,input-behavior-listener";
-        device = <&trackball>;
+        device = <&trackball_listener>;
         layers = <SCROLL>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_MISC>;
