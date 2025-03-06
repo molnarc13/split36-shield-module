@@ -72,6 +72,7 @@
         scroller {
             layers = <6>;
             input-processors = <&zip_xy_to_scroll_mapper>;
+            process-next;
         };
     };
 };
