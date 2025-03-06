@@ -59,26 +59,17 @@
     device = <&trackball>;
 };
 
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-
-/ {
-    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
-        compatible = "zmk,input-processor-temp-layer";
-        #input-processor-cells = <2>;
-        require-prior-idle-ms = <500>;
-    };
-};
-
 #include <input/processors.dtsi>
 
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        input-processor = <&zip_xy_scaler 3 2>;
 
         mouse {
             layers = <5>;
-            input-processors = <&zip_temp_layer>;
+            input-processors = <&zip_temp_layer 2 500>;
         };
 
         scroller {
