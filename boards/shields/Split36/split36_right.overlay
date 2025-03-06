@@ -78,7 +78,7 @@
 
         mouse {
             layers = <5>;
-            input <&zip_temp_layer>;
+            input = <&zip_temp_layer>;
         };
 
         scroller {
