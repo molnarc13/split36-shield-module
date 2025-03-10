@@ -32,4 +32,7 @@ config ZMK_POINTING_SMOOTH_SCROLLING
 config PMW3610_REPORT_INTERVAL_MIN
     default 8
 
+config PMW3610_SWAP_XY
+    default y
+
 endif
