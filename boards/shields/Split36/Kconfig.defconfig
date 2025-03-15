@@ -12,9 +12,6 @@ config SPI
 config ZMK_POINTING_SMOOTH_SCROLLING
     default n
 
-config PMW3610_REPORT_INTERVAL_MIN
-    default 8
-
 endif
 
 if SHIELD_SPLIT36_LEFT || SHIELD_SPLIT36_RIGHT
