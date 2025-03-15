@@ -1,9 +1,21 @@
-if SHIELD_SPLIT36_LEFT
+if SHIELD_SPLIT36_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "Split36"
 
 config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config SPI
+    default y
+
+config ZMK_POINTING_SMOOTH_SCROLLING
+    default n
+
+config PMW3610_REPORT_INTERVAL_MIN
+    default 8
+
+config PMW3610_SWAP_XY
     default y
 
 endif
@@ -17,22 +29,6 @@ config ZMK_POINTING
     default y
 
 config ZMK_SLEEP
-    default y
-
-endif
-
-if SHIELD_SPLIT36_RIGHT
-
-config SPI
-    default y
-
-config ZMK_POINTING_SMOOTH_SCROLLING
-    default n
-
-config PMW3610_REPORT_INTERVAL_MIN
-    default 8
-
-config PMW3610_SWAP_XY
     default y
 
 endif
