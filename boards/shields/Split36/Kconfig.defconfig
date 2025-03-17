@@ -1,4 +1,4 @@
-if SHIELD_SPLIT36_RIGHT
+if SHIELD_SPLIT36_LEFT
 
 config ZMK_KEYBOARD_NAME
     default "Split36"
@@ -6,23 +6,11 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-config SPI
-    default y
-
-config ZMK_POINTING_SMOOTH_SCROLLING
-    default n
-
 endif
 
 if SHIELD_SPLIT36_LEFT || SHIELD_SPLIT36_RIGHT
 
 config ZMK_SPLIT
-    default y
-
-config ZMK_POINTING
-    default y
-
-config ZMK_SLEEP
     default y
 
 endif
