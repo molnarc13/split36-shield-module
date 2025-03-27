@@ -69,15 +69,15 @@
             >;
         };
         lower_layer {
-// -------------------------------------------------------------------------
-// | CTR+LFT | HOM | UP  | END | CTR+RT |        | VL- |  7  | 8 | 9 |     |
-// | OPT+LFT | LFT | DWN | RT  | OPT+RT |        | VL+ |  4  | 5 | 6 |     |
-// |   ESC   |     |     |     |        |        | MUT |  1  | 2 | 3 | RET |
-//                 |     |     |  ---   |        | TOG |  0  |   |
+// ---------------------------------------------------------------------------
+// | CTR+LFT | HOM | UP  |  END  | CTR+RT |        | VL- |  7  | 8 | 9 |     |
+// | OPT+LFT | LFT | DWN |  RT   | OPT+RT |        | VL+ |  4  | 5 | 6 |     |
+// |   ESC   |     |     | MOUSE |        |        | MUT |  1  | 2 | 3 | RET |
+//                 |     |       |  ---   |        | TOG |  0  |   |
             bindings = <
                 &wwlft &kp HOME &kp UP &kp END &wwrht            &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &trans
                 &mwlft &kp LEFT &kp DOWN &kp RIGHT &mwrht        &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &trans
-                &kp ESC &trans &trans &trans &trans              &kp C_MUTE &kp N1 &kp N2 &kp N3 &kp RET
+                &kp ESC &trans &trans &mo MOUSE &trans              &kp C_MUTE &kp N1 &kp N2 &kp N3 &kp RET
                 &trans &trans &trans                             &mo TOG &kp N0 &trans
             >;
         };
@@ -146,8 +146,7 @@
 
 // trackball overrides
 &trackball_listener {
-    input-processors = <&zip_temp_layer 5 1000>,
-        <&zip_xy_scaler 1 1>,
+    input-processors = <&zip_xy_scaler 1 1>,
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_XY_SWAP)>;
 
     scroller {
