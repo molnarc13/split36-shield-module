@@ -10,8 +10,8 @@ endif
 
 if SHIELD_SPLIT36_RIGHT
 
-config ZMK_SPLIT_ROLE_PERIPHERAL
-    default y
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
 
 endif
 
