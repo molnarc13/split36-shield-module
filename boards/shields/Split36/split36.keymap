@@ -161,7 +161,7 @@
 };
 
 // trackball overrides
-&trackball_listener {
+/*&trackball_listener {
     input-processors = <&zip_xy_scaler 1 1>;
 
     scroller {
@@ -171,4 +171,4 @@
 	    <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
         process-next;
     };
-};
+};*/
