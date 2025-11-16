@@ -10,6 +10,6 @@
         ;
 };
 
-//&trackball_listener {
-//    status = "okay";
-//};
+&trackball_listener {
+    status = "okay";
+};
