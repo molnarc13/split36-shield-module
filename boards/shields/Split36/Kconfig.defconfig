@@ -13,19 +13,22 @@ if SHIELD_SPLIT36_LEFT || SHIELD_SPLIT36_RIGHT
 config ZMK_SPLIT
     default y
 
-config ZMK_POINTING
-    default y
+#config ZMK_POINTING
+#    default y
 
 config ZMK_SLEEP
     default y
 
-config SPI
-    default y
+#config SPI
+#    default y
 
-config ZMK_POINTING_SMOOTH_SCROLLING
-    default n
+#config ZMK_POINTING_SMOOTH_SCROLLING
+#    default n
 
-config PMW3610_REPORT_INTERVAL_MIN
-    default 8
+#config PMW3610_REPORT_INTERVAL_MIN
+#    default 8
+
+config ZMK_BLE_CLEAR_BONDS_ON_START
+     default y
 
 endif
