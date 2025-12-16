@@ -71,11 +71,11 @@
     };
     behaviors {
         shfmt: shift_mod_tap {
-            compatible = "zmk,behavior-hod-tap";
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&sk>;
+            bindings = <&kp>, <&sk>;
             display-name = "Mod-Tap";
         };
     };
