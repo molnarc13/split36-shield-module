@@ -6,12 +6,13 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-#define LWR 1
-#define RSE 2
-#define GAM 3
-#define TOG 4
-#define MOUSE 5
-#define SCROLL 6
+#define MAC 1
+#define LWR 2
+#define RSE 3
+#define GAM 4
+#define TOG 5
+#define MOUSE 6
+#define SCROLL 7
 
 &lt {
     tapping-term-ms = <175>;
@@ -68,23 +69,46 @@
                 <&macro_release &kp LCTRL>;
         };
     };
+    behaviors {
+        shfmt: shift_mod_tap {
+            compatible = "zmk,behavior-hod-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&sk>;
+            display-name = "Mod-Tap";
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-// --------------------------------------------------------------
-// | Q | W |  F  |  P  |  B  |        |  J  |  L  |  U  | Y | ; |
-// | A | R |  S  |  T  |  G  |        |  M  |  N  |  E  | I | O |
-// | Z | X |  C  |  D  |  V  |        |  K  |  H  |  ,  | . | / |
-//         | SHF | BSP | LWR |        | RSE | SPC | SHF |
+// -----------------------------------------------------------------
+// | Q | W |  F  |   P    |  B  |        |  J  |  L  |  U  | Y | ; |
+// | A | R |  S  |   T    |  G  |        |  M  |  N  |  E  | I | O |
+// | Z | X |  C  |   D    |  V  |        |  K  |  H  |  ,  | . | / |
+//         | SHF | LC+BSP | LWR |        | RSE | SPC | SHF |
             bindings = <
-                &kp Q &kp W &kp F &kp P &kp B     &kp J &kp L &kp U &kp Y &kp SEMI
-                &kp A &kp R &kp S &kp T &kp G     &kp M &kp N &kp E &kp I &kp O
-                &kp Z &kp X &kp C &kp D &kp V     &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                &kp LSHFT &kp BSPC &mo LWR        &mo RSE &kp SPACE &kp RSHFT
+                &kp Q &kp W &kp F &kp P &kp B                 &kp J &kp L &kp U &kp Y &kp SEMI
+                &kp A &kp R &kp S &kp T &kp G                 &kp M &kp N &kp E &kp I &kp O
+                &kp Z &kp X &kp C &kp D &kp V                 &kp K &kp H &kp COMMA &kp DOT &kp FSLH
+                &shfmt LSHFT LSHFT &kp LC_BSPC &mo LWR       &mo RSE &kp SPACE &shfmt RSHFT RSHFT
             >;
         };
-        lower_layer {
+        mac_layer {
+// -----------------------------------------------------------------
+// | Q | W |  F  |   P    |  B  |        |  J  |  L  |  U  | Y | ; |
+// | A | R |  S  |   T    |  G  |        |  M  |  N  |  E  | I | O |
+// | Z | X |  C  |   D    |  V  |        |  K  |  H  |  ,  | . | / |
+//         | SHF | LA+BSP | LWR |        | RSE | SPC | SHF |
+            bindings = <
+                &kp Q &kp W &kp F &kp P &kp B                &kp J &kp L &kp U &kp Y &kp SEMI
+                &kp A &kp R &kp S &kp T &kp G                &kp M &kp N &kp E &kp I &kp O
+                &kp Z &kp X &kp C &kp D &kp V                &kp K &kp H &kp COMMA &kp DOT &kp FSLH
+                &shfmt LSHFT LSHFT &kp LA_BSPC &mo LWR       &mo RSE &kp SPACE &shfmt RSHFT RSHFT
+            >;
+       };
+       lower_layer {
 // ---------------------------------------------------------------------------
 // | CTR+LFT | HOM | UP  |  END  | CTR+RT |        | VL- |  7  | 8 | 9 |     |
 // | OPT+LFT | LFT | DWN |  RT   | OPT+RT |        | VL+ |  4  | 5 | 6 |     |
@@ -93,8 +117,8 @@
             bindings = <
                 &wwlft &kp HOME &kp UP &kp END &wwrht            &kp C_VOL_UP &kp N7 &kp N8 &kp N9 &trans
                 &mwlft &kp LEFT &kp DOWN &kp RIGHT &mwrht        &kp C_VOL_DN &kp N4 &kp N5 &kp N6 &trans
-                &kp ESC &trans &trans &mo MOUSE &trans              &kp C_MUTE &kp N1 &kp N2 &kp N3 &kp RET
-                &bt BT_CLR &trans &trans                             &mo TOG &kp N0 &trans
+                &kp ESC &trans &trans &mo MOUSE &trans           &kp C_MUTE &kp N1 &kp N2 &kp N3 &kp RET
+                &bt BT_CLR &trans &trans                         &mo TOG &kp N0 &trans
             >;
         };
         raise_layer {
@@ -119,7 +143,7 @@
             bindings = <
                 &kp Q &kp W &kp F &kp P &kp B       &kp J &kp L &kp U &kp Y &kp SEMI
                 &kp A &kp R &kp S &kp T &kp G       &kp M &mkp MB4 &mkp MB5 &kp I &kp O
-                &kp LSHFT &kp X &kp C &kp D &kp V   &mkp MB3 &mkp MB1 &mkp MB2 &mft GAM SCROLL &kp FSLH
+                &kp LSHFT &kp X &kp C &kp D &kp V   &mkp MB3 &mkp MB1 &mkp MB2 &mo SCROLL &kp FSLH
                 &kp LCTRL &kp BSPC &kp LALT         &tog GAM &kp SPACE &kp RET
             >;
         };
@@ -127,12 +151,12 @@
 // -------------------------------------------------------------------
 // | BT0 | BT1 | BT2 | BT3 | BT4 |        | BTC |    |    |    | GAM |
 // | F1  | F2  | F3  | F4  | F5  |        | F6  | F7 | F8 | F9 | F10 |
-// | F11 | F12 |     |     |     |        |     |    |    |    |     |
+// | F11 | F12 |     |     |     |        |     |    |    |    | MAC |
 //             |     |     | --- |        | --- |    |    |
             bindings = <
                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &bt BT_CLR &trans &trans &trans &tog GAM
                 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
-                &kp F11 &kp F12 &trans &trans &trans                                  &trans &trans &trans &trans &trans
+                &kp F11 &kp F12 &trans &trans &trans                                &trans &trans &trans &trans &tog MAC
                 &trans &trans &trans                                                &trans &trans &trans
             >;
         };
@@ -165,7 +189,7 @@
     input-processors = <&zip_xy_scaler 1 1>;
 
     scroller {
-        layers = <6>;
+        layers = <SCROLL>;
         input-processors = <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 16>,
 	    <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
