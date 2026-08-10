@@ -17,9 +17,9 @@
 #     artifact-name: corne_left_with_logging
 #
 include:
-  - board: nice_nano@2.0.0
+  - board: nice_nano@2.0.0//zmk
     shield: split36_left
-  - board: nice_nano@2.0.0
+  - board: nice_nano@2.0.0//zmk
     shield: split36_right
-  - board: nice_nano@2.0.0
+  - board: nice_nano@2.0.0//zmk
     shield: settings_reset
