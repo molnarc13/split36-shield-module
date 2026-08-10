@@ -17,6 +17,15 @@
         };
 };
 
+&usbd {
+        status = "okay";
+};
+
+zephyr_udc0: &usbd {
+        compatible = "nordic'nrf-usbd";
+        status = "okay";
+};
+
 &flash0 {
         partitions {
                 compatible = "fixed-partitions";
