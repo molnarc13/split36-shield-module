@@ -1,4 +1,5 @@
 #include "split36.dtsi"
+#include <dt-bindings/zmk/input_transform.h>
 
 &kscan0 {
     col-gpios
@@ -8,4 +9,23 @@
         , <&pro_micro 5 GPIO_ACTIVE_HIGH>
         , <&pro_micro 4 GPIO_ACTIVE_HIGH>
         ;
+};
+
+/ {
+        trackball_listener {
+                compatible = "zmk,input-listener";
+                device = <&trackball_split>;
+
+                input-processors =
+                        <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
+                        <&zip_xy_scaler 1 1>;
+
+                scroller {
+                        layers = <7>;
+                        input-processors =
+                                <&zip_xy_to_scroll_mapper>,
+                                <&zip_scroll_scaler 1 16>,
+                                <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+                };
+        };
 };
