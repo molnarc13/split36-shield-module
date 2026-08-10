@@ -36,7 +36,7 @@ zephyr_udc0: &usbd {
                         label = "mcuboot";
                         reg = <0x00000000 DT_SIZE_K(48)>;
                 };
-                slot0_partition: partition@c000 {
+                code_partition: partition@c000 {
                         label = "image-0";
                         reg = <0x00000c00 DT_SIZE_K(448)>;
                 };
