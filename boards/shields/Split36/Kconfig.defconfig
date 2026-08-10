@@ -19,10 +19,17 @@ config ZMK_POINTING
 config ZMK_SLEEP
     default y
 
+config ZMK_POINTING_SMOOTH_SCROLLING
+    default n
+
+endif
+
+if SHIELD_SPLIT36_RIGHT
+
 config SPI
     default y
 
-config ZMK_POINTING_SMOOTH_SCROLLING
-    default n
+config PMW3610
+    default y
 
 endif
