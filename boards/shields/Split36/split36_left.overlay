@@ -1,11 +1,5 @@
 #include "split36.dtsi"
 
-/ {
-        trackbal: trackbal_split {
-                compatible = "zmk,input-split";
-        };
-};
-
 &kscan0 {
     col-gpios
         = <&pro_micro 8 GPIO_ACTIVE_HIGH>
