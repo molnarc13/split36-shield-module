@@ -54,7 +54,3 @@
         zephyr,axis-y = <INPUT_REL_Y>;
     };
 };
-
-&trackball_split {
-    device = <&trackball>;
-};
