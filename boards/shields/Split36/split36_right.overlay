@@ -1,4 +1,5 @@
 #include "split36.dtsi"
+#include <zephyr/dt-bindings/gpio/gpio.h>
 
 &default_transform {
     col-offset = <5>;
@@ -55,28 +56,6 @@
     };
 };
 
-/ {
-        trackball_listener {
-                compatible = "zmk,input-listener";
-                device = <&trackball>;
-
-                input-processors =
-                        <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-                        <&zip_xy_scaler 1 1>;
-
-                scroller {
-                        layers = <SCROLL>;
-                        input-processors =
-                                <&zip_xy_to_scroll_mapper>,
-                                <&zip_scroll_scaler 1 16>,
-                                <&zip_sxroll_transform INPUT_TRANSFORM_Y_INVERT>;
-                };
-        };
-};
-
-/ {
-        trackball_split: trackball_split {
-                compatible = "zmk,input-split";
-                device = <&trackball>;
-        };
+&trackball_split {
+        device = <&trackball>;
 };
