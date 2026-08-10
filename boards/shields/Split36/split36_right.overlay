@@ -73,3 +73,10 @@
                 };
         };
 };
+
+/ {
+        trackball_split: trackball_split {
+                compatible = "zmk,input-split";
+                device = <&trackball>;
+        };
+};
