@@ -58,5 +58,5 @@
 };
 
 &trackball_split {
-        device = <&trachball>;
+        device = <&trackball>;
 };
