@@ -1,5 +1,0 @@
-board:
-  name: nice_nano_clone
-  vendor: connor
-  socs:
-    - name: nrf52840
