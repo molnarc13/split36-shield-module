@@ -20,7 +20,7 @@ config ZMK_SLEEP
     default y
 
 config ZMK_POINTING_SMOOTH_SCROLLING
-    default n
+    default y
 
 endif
 
