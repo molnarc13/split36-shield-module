@@ -92,7 +92,7 @@
                 &kp Q &kp W &kp F &kp P &kp B                 &kp J &kp L &kp U &kp Y &kp SEMI
                 &kp A &kp R &kp S &kp T &kp G                 &kp M &kp N &kp E &kp I &kp O
                 &kp Z &kp X &kp C &kp D &kp V                 &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                &shfmt LSHFT LSHFT &kp LC(BSPC) &mo LWR       &mo RSE &kp SPACE &shfmt RSHFT RSHFT
+                &shfmt LSHFT LSHFT &kp BSPC &mo LWR       &mo RSE &kp SPACE &shfmt RSHFT RSHFT
             >;
         };
         mac_layer {
@@ -105,7 +105,7 @@
                 &kp Q &kp W &kp F &kp P &kp B                &kp J &kp L &kp U &kp Y &kp SEMI
                 &kp A &kp R &kp S &kp T &kp G                &kp M &kp N &kp E &kp I &kp O
                 &kp Z &kp X &kp C &kp D &kp V                &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                &shfmt LSHFT LSHFT &kp LA(BSPC) &mo LWR       &mo RSE &kp SPACE &shfmt RSHFT RSHFT
+                &shfmt LSHFT LSHFT &kp BSPC &mo LWR       &mo RSE &kp SPACE &shfmt RSHFT RSHFT
             >;
        };
        lower_layer {
