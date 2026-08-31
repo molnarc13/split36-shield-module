@@ -25,7 +25,7 @@
 
       combo_snipe {
         timeout-ms = <50>;
-        keys = <22 23>;
+        key-positions = <22 23>;
         bindings = <&mo SNIPE>;
       };
     };
