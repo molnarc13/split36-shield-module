@@ -57,9 +57,7 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         force-awake;
-        run-downshift-time = <0xFFFF>;
-        rest1-downshift-time = <0xFFFF>;
-        rest2-downshift-time = <0xFFFF>;
+        force-awake-4ms-mode;
     };
 };
 
