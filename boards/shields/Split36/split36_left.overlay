@@ -11,28 +11,6 @@
         ;
 };
 
-/ {
-        trackball_listener {
-                compatible = "zmk,input-listener";
-                device = <&trackball_split>;
-
-                input-processors =
-                        <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-                        <&zip_xy_scaler 1 1>;
-
-                scroller {
-                        layers = <7>;
-                        input-processors =
-                                <&zip_xy_to_scroll_mapper>,
-                                <&zip_scroll_scaler 1 5>,
-                                <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
-                };
-
-                snipe {
-                        layers = <8>;
-                        input-processors =
-                                <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-                                <&zip_xy_scaler 1 4>;
-                };
-        };
+&trackball_listener {
+        status = "okay";
 };
