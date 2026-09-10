@@ -80,6 +80,12 @@
         };
     };
     behaviors {
+        bs_word_uni: bs_word_universal {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp LC(LA(BSPC))>;
+            mods = <MOD_LSFT|MOD_RSFT)>;
+        };
         skq: sticky_key_quick {
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
