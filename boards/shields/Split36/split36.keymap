@@ -90,9 +90,8 @@
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
             bindings = <&kp>;
-            release-after-user-key;
+            release-after-ms = <1000>;
             quick-release;
-            timeout-ms = <1000>;
         };
         shfmt: shift_mod_tap {
             compatible = "zmk,behavior-hold-tap";
