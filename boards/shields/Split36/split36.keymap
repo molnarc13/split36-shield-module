@@ -84,7 +84,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp LC(LA(BSPC))>;
-            mods = <MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         skq: sticky_key_quick {
             compatible = "zmk,behavior-sticky-key";
