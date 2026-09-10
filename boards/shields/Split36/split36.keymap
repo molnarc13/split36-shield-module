@@ -80,12 +80,21 @@
         };
     };
     behaviors {
+        skq: sticky_key_quick {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-user-key;
+            quick-release;
+            timeout-ms = <1000>;
+        };
         shfmt: shift_mod_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&sk>;
+            flavor = "balanced";
+            tapping-term-ms = <160>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&skq>;
             display-name = "Mod-Tap";
         };
     };
