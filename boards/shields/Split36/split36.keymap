@@ -77,12 +77,21 @@
                 <&macro_tap &kp RIGHT>,
                 <&macro_release &kp LCTRL>;
         };
+        bswu: bspc_word_universal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings =
+                <&macro_tap &kp LC(BSPC)>,
+                <&macro_tap &kp LA(BSPC)>;
+        };
     };
     behaviors {
-        bswu: bs_word_universal {
+        bsw: bs_word {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp LC(LA(BSPC))>;
+            bindings = <&kp BSPC>, <&bswu>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         skq: sticky_key_quick {
@@ -115,7 +124,7 @@
                 &kp Q &kp W &kp F &kp P &kp B                 &kp J &kp L &kp U &kp Y &kp SEMI
                 &kp A &kp R &kp S &kp T &kp G                 &kp M &kp N &kp E &kp I &kp O
                 &kp Z &kp X &kp C &kp D &kp V                 &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-                &shfmt LSHFT LSHFT &bswu &mo LWR       &mo RSE &kp SPACE &shfmt RSHFT RSHFT
+                &shfmt LSHFT LSHFT &bsw &mo LWR       &mo RSE &kp SPACE &shfmt RSHFT RSHFT
             >;
         };
         lower_layer {
