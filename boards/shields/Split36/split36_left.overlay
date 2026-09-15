@@ -1,5 +1,4 @@
 #include "split36.dtsi"
-#include <dt-bindings/zmk/input_transform.h>
 
 &kscan0 {
     col-gpios
