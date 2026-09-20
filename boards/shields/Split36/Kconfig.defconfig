@@ -22,8 +22,5 @@ config ZMK_SLEEP
 config SPI
     default y
 
-config ZMK_POINTING_SMOOTH_SCROLLING
-    default y
-
 endif
 
