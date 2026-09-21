@@ -31,11 +31,16 @@ jobs:
             -DBOARD_ROOT="${GITHUB_WORKSPACE}" \
             -DSHIELD="${{ matrix.shield }}"
 
-      - name: Rename Artifact
-        run: cp "build/${{ matrix.shield }}/zephyr/zmk.uf2" "${{ matrix.shield }}_nice_nano_v2.uf2"
+      - name: Stage Artifact
+        run: |
+          mkdir -p "${GITHUB_WORKSPACE}/artifacts"
+          cp "build/${{ matrix.shield }}/zephyr/zmk.uf2" "${GITHUB_WORKSPACE}/artifacts/${{ matrix.shield }}_nice_nano_v2.uf2"
+          # Ensure file permissions are world-readable for the host runner
+          chmod -R 777 "${GITHUB_WORKSPACE}/artifacts"
 
       - name: Upload UF2 Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.shield }}
-          path: ${{ matrix.shield }}_nice_nano_v2.uf2
+          name: ${{ matrix.shield }}_nice_nano_v2
+          path: ${{ github.workspace }}/artifacts/${{ matrix.shield }}_nice_nano_v2.uf2
+          if-no-files-found: error
