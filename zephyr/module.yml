@@ -1,3 +1,4 @@
 build:
+  kconfig: none
   settings:
     board_root: .

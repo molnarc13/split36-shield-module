@@ -28,7 +28,7 @@ jobs:
         run: |
           west build -s zmk/app -d "build/${{ matrix.shield }}" -b nice_nano_v2 -- \
             -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" \
-            -DSHIELD_DIRS="${GITHUB_WORKSPACE}/boards/shields" \
+            -DBOARD_ROOT="${GITHUB_WORKSPACE}" \
             -DSHIELD="${{ matrix.shield }}"
 
       - name: Rename Artifact
