@@ -1,4 +1,4 @@
 build:
-  cmake: .
+  cmake: boards/shields/Split36
   settings:
     board_root: .
