@@ -1,5 +1,41 @@
+name: Build Split36 Firmware
+
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.2
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:3.5
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - shield: split36_left
+          - shield: split36_right
+          - shield: settings_reset
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Initialize West Workspace
+        run: |
+          west init -l config
+          west update
+          west zephyr-export
+
+      - name: Build Firmware (${{ matrix.shield }})
+        run: |
+          west build -s zmk/app -b nice_nano_v2 -- \
+            -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" \
+            -DZMK_EXTRA_MODULES="${GITHUB_WORKSPACE}" \
+            -DSHIELD="${{ matrix.shield }}"
+
+      - name: Rename Artifact
+        run: cp build/zephyr/zmk.uf2 "${{ matrix.shield }}_nice_nano_v2.uf2"
+
+      - name: Upload UF2 Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.shield }}
+          path: ${{ matrix.shield }}_nice_nano_v2.uf2
